@@ -18,12 +18,19 @@ class TodoItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: Colors.deepPurple[600],
+          color: const Color.fromARGB(148, 139, 110, 196),
           borderRadius: BorderRadius.circular(12)
         ),
         child: Row(children: [
-          Checkbox(value: isChecked, onChanged: onChanged)
-          Text(todoText)
+          Checkbox(value: isChecked, onChanged: onChanged),
+          Text(todoText,
+          style: TextStyle(
+            decoration: isChecked ?
+            TextDecoration.lineThrough :
+            TextDecoration.none,
+            fontSize: 18
+          ),
+          )
         ],),
       ),
     );
